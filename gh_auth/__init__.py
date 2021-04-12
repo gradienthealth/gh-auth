@@ -1,12 +1,13 @@
 import requests
 import os
+import getpass
 
 def credentials():
 	BASE_URL = 'https://uax8u4j8a0.execute-api.us-east-1.amazonaws.com/dev'
 	LOGIN_URL = '{}/login'.format(BASE_URL)
 	SESSION_URL = '{}/me'.format(BASE_URL)
 	print('Visit {} to get a session token'.format(LOGIN_URL))
-	session = input("Session token: ")
+	session = getpass.getpass("Paste Token: ")
 	headers = {
 		'Cookie': 'session={}'.format(session)
 	}
